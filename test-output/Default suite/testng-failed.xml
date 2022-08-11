@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hometask.framework.Project1">
+      <class name="com.hometask.api.REST_Automation_Task2">
         <methods>
-          <include name="newCustomer"/>
-          <include name="browserLaunch"/>
+          <include name="getWeatherByLocation"/>
         </methods>
-      </class> <!-- com.hometask.framework.Project1 -->
+      </class> <!-- com.hometask.api.REST_Automation_Task2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
