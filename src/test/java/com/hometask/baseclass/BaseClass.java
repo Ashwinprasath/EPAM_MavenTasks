@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class BaseClass {
 
@@ -54,6 +55,17 @@ public class BaseClass {
 	public void implicitWait(int i) {
 		driver.manage().timeouts().implicitlyWait(i, TimeUnit.SECONDS);
 	}
+	
+	//Select from dropdown
+	public void selectByText(WebElement element, String text) {
+		Select s= new Select(element);
+		s.selectByVisibleText(text);
+	}
+	
+	public void selectByValue(WebElement element, String value) {
+		Select s= new Select(element);
+		s.selectByVisibleText(value);
+	}
 
 	// Get data from WorkBook
 	public String getDataFromWorkbook(int row, int cell) throws IOException {
@@ -88,7 +100,6 @@ public class BaseClass {
 	}
 
 	// Set Cell value
-	@SuppressWarnings("resource")
 	public String setCellValue(int row, int cell, String customerId) throws IOException {
 		String value = null;
 		File f = new File("C:\\Users\\Ashwin_Prasath\\eclipse-workspace\\Maven\\Workbooks\\data.xlsx");
